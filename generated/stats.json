@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T08:09:08.794Z",
+  "generatedAt": "2026-06-12T08:26:08.876Z",
   "owner": {
     "login": "tvy14",
     "id": 121087211,
@@ -19,7 +19,7 @@
   },
   "repositoryPolicy": {
     "includeForks": false,
-    "includeArchived": false,
+    "includeArchived": true,
     "selectedRepoCount": 17,
     "allOwnedRepoCount": 34,
     "sourceRepoCount": 17,
@@ -31,128 +31,72 @@
     "forks": 3,
     "watchers": 5,
     "openIssues": 1,
-    "sizeKB": 21587,
-    "latestPushAt": "2026-06-12T08:08:48.000Z"
+    "sizeKB": 32638,
+    "latestPushAt": "2026-06-12T08:25:44.000Z"
   },
   "contributions": {
     "year": 2026,
-    "totalContributions": 259,
-    "commits": 146,
+    "totalContributions": 260,
+    "commits": 147,
     "issues": 0,
     "pullRequests": 6,
     "pullRequestReviews": 0,
     "repositories": 10,
     "restricted": 97,
     "from": "2026-01-01T00:00:00.000Z",
-    "to": "2026-06-12T08:09:08.535Z"
+    "to": "2026-06-12T08:26:08.256Z"
   },
   "languages": [
     {
       "name": "Jupyter Notebook",
       "bytes": 14854837,
-      "percent": 95.07371926198688
+      "percent": 95.07296474101533
     },
     {
       "name": "TypeScript",
       "bytes": 356252,
-      "percent": 2.280079049976876
+      "percent": 2.280060954887367
     },
     {
       "name": "HTML",
       "bytes": 180126,
-      "percent": 1.152839896916045
+      "percent": 1.1528307477853932
     },
     {
       "name": "Python",
       "bytes": 108968,
-      "percent": 0.697415464103725
+      "percent": 0.6974099292977068
     },
     {
       "name": "JavaScript",
-      "bytes": 78725,
-      "percent": 0.5038546400004199
+      "bytes": 78849,
+      "percent": 0.5046442580867309
     },
     {
       "name": "CSS",
       "bytes": 44550,
-      "percent": 0.2851282846874399
+      "percent": 0.2851260218615817
     },
     {
       "name": "Makefile",
       "bytes": 1088,
-      "percent": 0.00696340232861806
+      "percent": 0.006963347065890031
     }
   ],
   "topRepos": [
     {
-      "name": "ML_Wireless_Testbed",
-      "fullName": "tvy14/ML_Wireless_Testbed",
-      "url": "https://github.com/tvy14/ML_Wireless_Testbed",
-      "description": "Anything Related to ML Wireless Course Materials (by me)",
-      "language": "Jupyter Notebook",
-      "stars": 2,
-      "forks": 1,
-      "openIssues": 1,
-      "pushedAt": "2026-04-20T14:28:52Z",
-      "archived": false,
-      "fork": false,
-      "score": 10
-    },
-    {
-      "name": "model-driven-channel-estimation",
-      "fullName": "tvy14/model-driven-channel-estimation",
-      "url": "https://github.com/tvy14/model-driven-channel-estimation",
-      "description": "Ch2.4 Model-Driven Channel Estimation: LISTA vs ISTA — algorithm unrolling example for students",
+      "name": "local-rag-reranker",
+      "fullName": "tvy14/local-rag-reranker",
+      "url": "https://github.com/tvy14/local-rag-reranker",
+      "description": "Easy RAG for your local notebook",
       "language": "Python",
-      "stars": 1,
-      "forks": 0,
-      "openIssues": 0,
-      "pushedAt": "2026-04-01T09:45:48Z",
-      "archived": false,
-      "fork": false,
-      "score": 4
-    },
-    {
-      "name": "channel-gan-example",
-      "fullName": "tvy14/channel-gan-example",
-      "url": "https://github.com/tvy14/channel-gan-example",
-      "description": "Example for Chapter 2 WCML Book - GAN-based Channel Model",
-      "language": "Python",
-      "stars": 1,
-      "forks": 0,
-      "openIssues": 0,
-      "pushedAt": "2026-03-18T11:04:21Z",
-      "archived": false,
-      "fork": false,
-      "score": 4
-    },
-    {
-      "name": "Markdown-Cheat",
-      "fullName": "tvy14/Markdown-Cheat",
-      "url": "https://github.com/tvy14/Markdown-Cheat",
-      "description": "anything related to markdown (cheatsheet)",
-      "language": "",
-      "stars": 1,
-      "forks": 0,
-      "openIssues": 0,
-      "pushedAt": "2024-04-02T08:26:52Z",
-      "archived": false,
-      "fork": false,
-      "score": 4
-    },
-    {
-      "name": "tvy14",
-      "fullName": "tvy14/tvy14",
-      "url": "https://github.com/tvy14/tvy14",
-      "description": "",
-      "language": "",
       "stars": 0,
-      "forks": 1,
+      "forks": 0,
       "openIssues": 0,
-      "pushedAt": "2026-06-12T08:03:22Z",
+      "pushedAt": "2026-02-13T02:12:32Z",
       "archived": false,
       "fork": false,
-      "score": 2
+      "score": 0
     },
     {
       "name": "Securing-RIC-ORAN-DPFL",
@@ -167,6 +111,34 @@
       "archived": false,
       "fork": false,
       "score": 2
+    },
+    {
+      "name": "ML_Wireless_Testbed",
+      "fullName": "tvy14/ML_Wireless_Testbed",
+      "url": "https://github.com/tvy14/ML_Wireless_Testbed",
+      "description": "Anything Related to ML Wireless Course Materials (by me)",
+      "language": "Jupyter Notebook",
+      "stars": 2,
+      "forks": 1,
+      "openIssues": 0,
+      "pushedAt": "2026-04-20T14:28:52Z",
+      "archived": false,
+      "fork": false,
+      "score": 8
+    },
+    {
+      "name": "VBFL",
+      "fullName": "tvy14/VBFL",
+      "url": "https://github.com/tvy14/VBFL",
+      "description": "phase 1 devel",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "pushedAt": "2023-12-04T15:11:19Z",
+      "archived": false,
+      "fork": true,
+      "score": 0
     }
   ]
 }
