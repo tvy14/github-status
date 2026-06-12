@@ -1,0 +1,19 @@
+{
+  "name": "github-status",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Auto-generated GitHub profile stats cards — languages, contributions, and top repos. Runs daily via GitHub Actions.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node src/index.js",
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/env.js && node --check src/github.js && node --check src/http.js && node --check src/stats.js && node --check src/render/cards.js && node --check src/render/gif.js && node --check src/render/svg.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

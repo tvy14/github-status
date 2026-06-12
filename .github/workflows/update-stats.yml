@@ -1,0 +1,74 @@
+name: Update generated GitHub stats
+
+on:
+  schedule:
+    # Daily at 18:23 UTC, which is 02:23 Asia/Taipei.
+    # Avoid minute 0 because GitHub warns that schedules can be delayed or dropped during high-load times.
+    - cron: "23 18 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/update-stats.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-status-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    env:
+      # This is the important part. In a fork, github.repository_owner is the forker.
+      # Do not use github.actor. Scheduled workflow actors can change.
+      TARGET_LOGIN: ${{ github.repository_owner }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      OUTPUT_DIR: generated
+      INCLUDE_FORKS: "false"
+      INCLUDE_ARCHIVED: "true"
+      MAX_LANGUAGE_REPOS: "100"
+      TOP_LANGUAGE_COUNT: "8"
+      TOP_REPO_COUNT: "6"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate source
+        run: npm run check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Generate SVG cards
+        run: npm run generate
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated
+          if git diff --cached --quiet; then
+            echo "No generated file changes."
+          else
+            git commit -m "chore: update generated GitHub stats"
+            git push
+          fi
