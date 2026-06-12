@@ -6,6 +6,7 @@ import {
   filterRepositories,
   getAccount,
   getCurrentYearContributions,
+  getPinnedRepositories,
   listOwnerRepositories,
 } from "./github.js";
 import { aggregateStats } from "./stats.js";
@@ -78,7 +79,9 @@ async function main() {
     allowFailure: config.allowGraphqlFailure,
   });
 
-  const stats = aggregateStats(account, allOwnedRepos, selectedRepos, languageBytes, contributions, config);
+  const pinnedRepos = await getPinnedRepositories(account, { token: config.token });
+
+  const stats = aggregateStats(account, allOwnedRepos, selectedRepos, languageBytes, contributions, pinnedRepos, config);
   await writeOutputFiles(config.outputDir, stats);
 
   console.log(`Done. Repos scanned: ${stats.repositoryPolicy.selectedRepoCount}`);
