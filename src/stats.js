@@ -48,7 +48,24 @@ function topRepositories(repos, count) {
     .slice(0, count);
 }
 
-export function aggregateStats(account, allOwnedRepos, selectedRepos, languageBytes, contributions, options = {}) {
+function pinnedRepositories(repos) {
+  return repos.map((repo) => ({
+    name: repo.name,
+    fullName: repo.full_name,
+    url: repo.html_url,
+    description: repo.description || "",
+    language: repo.language || "",
+    stars: repo.stargazers_count || 0,
+    forks: repo.forks_count || 0,
+    openIssues: repo.open_issues_count || 0,
+    pushedAt: repo.pushed_at || null,
+    archived: Boolean(repo.archived),
+    fork: Boolean(repo.fork),
+    score: (repo.stargazers_count || 0) * 3 + (repo.forks_count || 0) * 2,
+  }));
+}
+
+export function aggregateStats(account, allOwnedRepos, selectedRepos, languageBytes, contributions, pinnedRepos = [], options = {}) {
   const topLanguageCount = options.topLanguageCount ?? 8;
   const topRepoCount = options.topRepoCount ?? 6;
   const now = new Date();
@@ -95,6 +112,8 @@ export function aggregateStats(account, allOwnedRepos, selectedRepos, languageBy
     },
     contributions,
     languages: languagePercentages(languageBytes, topLanguageCount),
-    topRepos: topRepositories(selectedRepos, topRepoCount),
+    topRepos: pinnedRepos.length > 0
+      ? pinnedRepositories(pinnedRepos)
+      : topRepositories(selectedRepos, topRepoCount),
   };
 }
