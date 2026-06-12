@@ -80,6 +80,57 @@ export async function collectLanguageBytes(repos, { token = "", maxRepos = 100 }
   return Object.fromEntries(languageBytes.entries());
 }
 
+export async function getPinnedRepositories(account, { token = "" } = {}) {
+  const login = normalizeLogin(account.login);
+
+  const query = `
+    query PinnedRepositories($login: String!) {
+      user(login: $login) {
+        pinnedItems(first: 6, types: REPOSITORY) {
+          nodes {
+            ... on Repository {
+              name
+              nameWithOwner
+              description
+              url
+              primaryLanguage { name }
+              stargazerCount
+              forkCount
+              issues(states: OPEN) { totalCount }
+              pushedAt
+              isArchived
+              isFork
+              owner { login }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const data = await graphql(query, { login }, { token });
+    const nodes = data?.user?.pinnedItems?.nodes || [];
+    return nodes.map((repo) => ({
+      name: repo.name,
+      full_name: repo.nameWithOwner,
+      html_url: repo.url,
+      description: repo.description || "",
+      language: repo.primaryLanguage?.name || "",
+      stargazers_count: repo.stargazerCount || 0,
+      forks_count: repo.forkCount || 0,
+      open_issues_count: repo.issues?.totalCount || 0,
+      pushed_at: repo.pushedAt || null,
+      archived: Boolean(repo.isArchived),
+      fork: Boolean(repo.isFork),
+      owner: { login: repo.owner?.login || login },
+    }));
+  } catch (error) {
+    console.warn(`Warning: failed to fetch pinned repositories: ${error.message}`);
+    return [];
+  }
+}
+
 export async function getCurrentYearContributions(account, { token = "", allowFailure = true } = {}) {
   if (account.type !== "User") {
     return null;
