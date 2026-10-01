@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T22:23:07.568Z",
+  "generatedAt": "2026-10-01T22:47:00.042Z",
   "owner": {
     "login": "tvy14",
     "id": 121087211,
@@ -14,15 +14,15 @@
     "createdAt": "2022-12-20T07:54:36Z",
     "followers": 13,
     "following": 73,
-    "publicRepos": 39,
+    "publicRepos": 38,
     "publicGists": 0
   },
   "repositoryPolicy": {
     "includeForks": false,
     "includeArchived": true,
-    "selectedRepoCount": 20,
-    "allOwnedRepoCount": 39,
-    "sourceRepoCount": 20,
+    "selectedRepoCount": 19,
+    "allOwnedRepoCount": 38,
+    "sourceRepoCount": 19,
     "forkedRepoCount": 19,
     "archivedRepoCount": 0
   },
@@ -31,56 +31,56 @@
     "forks": 3,
     "watchers": 5,
     "openIssues": 1,
-    "sizeKB": 64736,
-    "latestPushAt": "2026-09-30T13:02:04.000Z"
+    "sizeKB": 64757,
+    "latestPushAt": "2026-09-30T22:23:09.000Z"
   },
   "contributions": {
     "year": 2026,
     "totalContributions": 353,
-    "commits": 188,
+    "commits": 185,
     "issues": 0,
     "pullRequests": 6,
     "pullRequestReviews": 0,
-    "repositories": 15,
-    "restricted": 144,
+    "repositories": 14,
+    "restricted": 148,
     "from": "2026-01-01T00:00:00.000Z",
-    "to": "2026-09-30T22:23:06.767Z"
+    "to": "2026-10-01T22:46:59.235Z"
   },
   "languages": [
     {
       "name": "Jupyter Notebook",
       "bytes": 14854837,
-      "percent": 92.91386843051711
+      "percent": 93.09179835650282
     },
     {
       "name": "TypeScript",
-      "bytes": 385755,
-      "percent": 2.4128160622976966
+      "bytes": 356252,
+      "percent": 2.232548182662714
     },
     {
       "name": "Python",
       "bytes": 347753,
-      "percent": 2.175121577457741
+      "percent": 2.1792869321870665
     },
     {
       "name": "HTML",
-      "bytes": 212034,
-      "percent": 1.3262278932307547
+      "bytes": 211593,
+      "percent": 1.3260039736314508
     },
     {
       "name": "JavaScript",
       "bytes": 128617,
-      "percent": 0.804472174008225
+      "percent": 0.8060127370780523
     },
     {
       "name": "CSS",
-      "bytes": 57666,
-      "percent": 0.36068865224937846
+      "bytes": 57052,
+      "percent": 0.3575315757308679
     },
     {
       "name": "Makefile",
       "bytes": 1088,
-      "percent": 0.006805210239089302
+      "percent": 0.006818242207024896
     }
   ],
   "topRepos": [
